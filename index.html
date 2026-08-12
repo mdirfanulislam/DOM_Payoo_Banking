@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS cdn! -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Daisy UI cdn! -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+    <!-- Google Font! -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+    </style>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Payoo</title>
+</head>
+
+<body class="bg-[#F4F5F7] h-screen  grid place-content-center">
+
+    <img src="Assets/Logo-full.png" class="mb-8" alt="">
+
+    <form id="formFieldset"
+        class="grid gap-3 place-content-center mx-auto fieldset bg-[#FFFFFF] border-none rounded-3xl p-5 w-75">
+
+        <label class="label text-black font-bold">Mobile Number</label>
+        <input type="number" id="mobileNumber" type="email"
+            class="input bg-[#F4F5F7] border-none rounded-4xl text-[#080808] w-full" placeholder=" Enter Your Number"
+            required />
+
+        <label class="label text-black font-bold">4 Digit Pin</label>
+        <input id="fourDigitPin" type="number" class="input bg-[#F4F5F7] border-none rounded-4xl text-[#080808] w-full"
+            placeholder=" Enter 4 Digit Pin" required />
+
+        <button id="loginBtn" class="btn border-none rounded-4xl mt-4 bg-[#3B25C1] text-white">Login</button>
+
+        <p id="errorText" class="text-red-500 font-bold"></p>
+
+    </form>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
