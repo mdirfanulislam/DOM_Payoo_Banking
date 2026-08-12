@@ -1,3 +1,5 @@
+import { addTransaction } from "./transactions.js";
+
 export function getBalance() {
     return parseInt(localStorage.getItem("availableBalance")) || 0;
 }
@@ -10,7 +12,7 @@ export function inputNumber(id) {
     const inputField = elementId(id);
     const inputFieldValue = inputField.value;
     const inputFieldNumber = parseInt(inputFieldValue);
-    console.log(inputFieldNumber);
+    // console.log(inputFieldNumber);
     return inputFieldNumber;
 }
 
@@ -50,6 +52,10 @@ addMoneyForm.addEventListener("submit", (event) => {
         availableBalance.innerText = totalBalance;
 
         setBalance(totalBalance);
+
+        const typeAddMoney = elementId('addMoneyTransaction').innerText;
+        console.log(typeAddMoney);
+        addTransaction(typeAddMoney, amount);
 
         addMoneyForm.reset();
     }

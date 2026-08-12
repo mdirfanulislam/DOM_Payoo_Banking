@@ -1,4 +1,5 @@
 import { getBalance, setBalance, inputNumber, elementId } from "./addmoney.js";
+import { addTransaction } from "./transactions.js";
 
 const withMoneyForm = elementId('withMoneyForm');
 const withAmount = elementId('withAmount');
@@ -23,6 +24,12 @@ withMoneyForm.addEventListener('submit', (e) => {
         setBalance(newBalance);
 
         elementId('availableBalance').innerText = newBalance;
+
+        // with amount;
+        const typeWith = elementId('withTransaction').innerText;
+        // console.log(typeWith);
+        // console.log(withamount);
+        addTransaction(typeWith, withamount);
 
         withMoneyForm.reset();
     }

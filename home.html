@@ -20,7 +20,7 @@
     <title>Payoo Home</title>
 </head>
 
-<body class="bg-[#F4F5F7] h-full w-screen pb-10">
+<body class="bg-[#F4F5F7] h-full pb-10">
 
     <div class="bg-white rounded-b-4xl mx-auto max-w-lg pb-6">
         <nav class="flex justify-between items-center h-21 px-4 mx-auto  max-w-lg border-b border-gray-100">
@@ -60,27 +60,32 @@
                 <img class="pointer-events-none" src="Assets/opt-1.png" alt="">
                 <h1 class="opacity-70 pointer-events-none">Add Money</h1>
             </a>
+
             <a data-target="withMoney" id="with-money" href="#"
                 class="toggle-btn h-22 w-full grid place-content-center justify-items-center font-semibold text-[14px] rounded-xl border-2 border-[#080808]/10">
                 <img class="pointer-events-none" src="Assets/opt-2.png" alt="">
                 <h1 class="opacity-70 pointer-events-none">Cashout</h1>
             </a>
+
             <a id="transfer-money" href="#"
                 class="toggle-btn h-22 w-full grid place-content-center justify-items-center font-semibold text-[13px] sm:text-[14px] rounded-xl border-2 border-[#080808]/10">
                 <img class="pointer-events-none" src="Assets/opt-3.png" alt="">
                 <h1 class="opacity-70 pointer-events-none">Transfer Money</h1>
             </a>
+
             <a id="get-bonus" href="#"
                 class="toggle-btn h-22 w-full grid place-content-center justify-items-center font-semibold text-[14px] rounded-xl border-2 border-[#080808]/10">
                 <img class="pointer-events-none" src="Assets/opt-4.png" alt="">
                 <h1 class="opacity-70 pointer-events-none">Get Bonus</h1>
             </a>
+
             <a id="pay-bill" href="#"
                 class="toggle-btn h-22 w-full grid place-content-center justify-items-center font-semibold text-[14px] rounded-xl border-2 border-[#080808]/10">
                 <img class="pointer-events-none" src="Assets/opt-5.png" alt="">
                 <h1 class="opacity-70 pointer-events-none">Pay Bill</h1>
             </a>
-            <a id="transactions" href="#"
+
+            <a data-target="transactions" id="transactions" href="#"
                 class="toggle-btn h-22 w-full grid place-content-center justify-items-center font-semibold text-[14px] rounded-xl border-2 border-[#080808]/10">
                 <img class="pointer-events-none" src="Assets/opt-6.png" alt="">
                 <h1 class="opacity-70 pointer-events-none">Transactions</h1>
@@ -89,15 +94,46 @@
     </div>
 
     <!----------------------------------------->
+    <!----------------------------------------->
     <!-- Transaction History -->
-    <div id="transactionHistory" class="toggle-panel max-w-lg mx-auto px-5 my-5 h-screen">
-        <h1 class="font-bold text-center">Transaction History</h1>
+    <div id="transactions" class="toggle-panel max-w-lg mx-auto px-5 my-5 h-screen">
+
+        <div class="my-4 flex justify-between items-center">
+            <h1 class="text-[18px] font-semibold opacity-90">Transaction History</h1>
+            <a href="#" class="text-[14px] text-[#080808] opacity-50">View All</a>
+        </div>
+
+        <ul class="mx-auto mx-w-lg" id="transactionList">
+            <!-- Transaction Item -->
+            <li class="flex items-center gap-4 px-4 py-3 bg-white rounded-xl">
+                <div
+                    class="flex items-center justify-center w-10 h-10 rounded-full bg-[#0874F2]/20 text-[#0874F2] text-2xl">
+                    ↓↑
+                </div>
+
+                <div class="flex-1">
+                    <div class="text-sm font-semibold text-[#080808]/70">Add Money</div>
+                    <div class="text-[12px] text-[#080808]/70 mt-1">Aug 12, 2026</div>
+                </div>
+
+                <div class="font-bold text-green-600">
+                    $140
+                </div>
+
+                <button class="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </li>
+        </ul>
+
+
     </div>
 
+    <!----------------------------------------->
     <!-- Add Money! -->
     <div id="addMoney" class="hidden toggle-panel max-w-lg mx-auto px-5">
 
-        <h1 class="text-[18px] font-semibold opacity-90 my-4">Add Money</h1>
+        <h1 id="addMoneyTransaction" class="text-[18px] font-semibold opacity-90 my-4">Add Money</h1>
 
         <form id="addMoneyForm" class="bg-white rounded-b-4xl mx-auto max-w-lg p-6 rounded-4xl grid gap-5">
 
@@ -140,10 +176,11 @@
         </form>
     </div>
 
+    <!----------------------------------------->
     <!-- CashOut! -->
     <div id="withMoney" class="hidden toggle-panel max-w-lg mx-auto px-5">
 
-        <h1 class="text-[18px] font-semibold opacity-90 my-4">Cash Out</h1>
+        <h1 id="withTransaction" class="text-[18px] font-semibold opacity-90 my-4">Cash Out</h1>
 
         <form id="withMoneyForm" class="bg-white rounded-b-4xl mx-auto max-w-lg p-6 rounded-4xl grid gap-5">
 
@@ -173,10 +210,11 @@
         </form>
     </div>
 
-
+    <!----------------------------------------->
     <!-- Script! -->
     <script type="module" src="scripts/addmoney.js"></script>
     <script type="module" src="scripts/cashout.js"></script>
+    <script type="module" src="scripts/transactions.js"></script>
 </body>
 
 </html>
