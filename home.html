@@ -70,19 +70,19 @@
                 <h1 class="opacity-70 pointer-events-none">Cashout</h1>
             </a>
 
-            <a id="transfer-money" href="#"
+            <a data-target="transferMoney" id="transfer-money" href="#"
                 class="toggle-btn h-22 w-full grid place-content-center justify-items-center font-semibold text-[13px] sm:text-[14px] rounded-xl border-2 border-[#080808]/10">
                 <img class="pointer-events-none" src="Assets/opt-3.png" alt="">
                 <h1 class="opacity-70 pointer-events-none">Transfer Money</h1>
             </a>
 
-            <a id="get-bonus" href="#"
+            <a data-target="getBonus" id="get-bonus" href="#"
                 class="toggle-btn h-22 w-full grid place-content-center justify-items-center font-semibold text-[14px] rounded-xl border-2 border-[#080808]/10">
                 <img class="pointer-events-none" src="Assets/opt-4.png" alt="">
                 <h1 class="opacity-70 pointer-events-none">Get Bonus</h1>
             </a>
 
-            <a id="pay-bill" href="#"
+            <a data-target="payBill" id="pay-bill" href="#"
                 class="toggle-btn h-22 w-full grid place-content-center justify-items-center font-semibold text-[14px] rounded-xl border-2 border-[#080808]/10">
                 <img class="pointer-events-none" src="Assets/opt-5.png" alt="">
                 <h1 class="opacity-70 pointer-events-none">Pay Bill</h1>
@@ -193,11 +193,122 @@
         </form>
     </div>
 
+
+    <!----------------------------------------->
+    <!---- Transfer Money! ---->
+    <div id="transferMoney" class="hidden toggle-panel max-w-lg mx-auto px-5">
+
+        <h1 id="transferTransaction" class="text-[18px] font-semibold opacity-90 my-4">Transfer Money</h1>
+
+        <form id="transferMoneyForm" class="bg-white rounded-b-4xl mx-auto max-w-lg p-6 rounded-4xl grid gap-5">
+
+            <div class="grid gap-3">
+                <h1 class="opacity-90 font-medium">User Account Number</h1>
+                <input id="transferNumber" name="transferaccount"
+                    class="input rounded-4xl border-none w-full bg-[#F4F5F7] h-13" type="number"
+                    placeholder=" Enter 11 digit number">
+            </div>
+
+            <div class="grid gap-3">
+                <h1 class="opacity-90 font-medium">Amount</h1>
+                <input id="transferAmount" name="transferamount"
+                    class="input rounded-4xl border-none w-full bg-[#F4F5F7] h-13" type="number"
+                    placeholder=" Enter amount to transfer">
+            </div>
+
+            <div class="grid gap-3">
+                <h1 class="opacity-90 font-medium">Pin Number</h1>
+                <input id="transferPinNum" name="transferpin"
+                    class="input rounded-4xl border-none w-full bg-[#F4F5F7] h-13" type="number"
+                    placeholder=" Enter 4 digit pin number">
+            </div>
+
+            <div>
+                <button id="transferMoneyBtn"
+                    class="rounded-4xl w-full bg-[#3B25C1] h-13 text-[20px] text-white font-semibold">Send Now</button>
+            </div>
+        </form>
+    </div>
+
+
+    <!----------------------------------------->
+    <!---- Get Bonus! ---->
+    <div id="getBonus" class="hidden toggle-panel max-w-lg mx-auto px-5">
+
+        <h1 id="getBonusTransaction" class="text-[18px] font-semibold opacity-90 my-4">Get Bonus</h1>
+
+        <form id="getBonusForm" class="bg-white rounded-b-4xl mx-auto max-w-lg p-6 rounded-4xl grid gap-5">
+
+            <div class="grid gap-3">
+                <h1 class="opacity-90 font-medium">Enter Bonus Coupon</h1>
+                <input id="getBonusNumber" name="getBonusaccount"
+                    class="input rounded-4xl border-none w-full bg-[#F4F5F7] h-13" type="number"
+                    placeholder=" Enter your coupon">
+            </div>
+
+            <div>
+                <button id="getBonusBtn"
+                    class="rounded-4xl w-full bg-[#3B25C1] h-13 text-[20px] text-white font-semibold">Get Bonus</button>
+            </div>
+        </form>
+    </div>
+
+
+    <!----------------------------------------->
+    <!---- Pay Bill! ---->
+    <div id="payBill" class="hidden toggle-panel max-w-lg mx-auto px-5">
+
+        <h1 id="payBillTransaction" class="text-[18px] font-semibold opacity-90 my-4">Pay Bill</h1>
+
+        <form id="payBillForm" class="bg-white rounded-b-4xl mx-auto max-w-lg p-6 rounded-4xl grid gap-5">
+
+            <div class="grid gap-3">
+
+                <h1 class="opacity-90 font-medium">Select To Pay</h1>
+
+                <select id="selectBank" name="type" class="select rounded-4xl border-none w-full bg-[#F4F5F7] h-13">
+                    <option value="" disabled selected>Select Biller</option>
+                    <option>BPDB (prepaid)</option>
+                    <option>NID Service</option>
+                    <option>WASA</option>
+                    <option>INTERNET</option>
+                </select>
+            </div>
+
+            <div class="grid gap-3">
+                <h1 class="opacity-90 font-medium">Biller Account Number</h1>
+                <input id="payBillNumber" name="payBillaccount"
+                    class="input rounded-4xl border-none w-full bg-[#F4F5F7] h-13" type="number"
+                    placeholder=" Enter account number">
+            </div>
+
+            <div class="grid gap-3">
+                <h1 class="opacity-90 font-medium">Amount to Pay</h1>
+                <input id="payBillAmount" name="payBillamount"
+                    class="input rounded-4xl border-none w-full bg-[#F4F5F7] h-13" type="number"
+                    placeholder=" Add Amount to pay">
+            </div>
+
+            <div class="grid gap-3">
+                <h1 class="opacity-90 font-medium">Pin Number</h1>
+                <input id="payBillPinNum" name="payBillpin"
+                    class="input rounded-4xl border-none w-full bg-[#F4F5F7] h-13" type="number"
+                    placeholder=" Enter 4 digit pin number">
+            </div>
+
+            <div>
+                <button id="payBillBtn"
+                    class="rounded-4xl w-full bg-[#3B25C1] h-13 text-[20px] text-white font-semibold">Send Now</button>
+            </div>
+        </form>
+    </div>
+
     <!----------------------------------------->
     <!---- Script! ---->
     <script type="module" src="scripts/addmoney.js"></script>
     <script type="module" src="scripts/cashout.js"></script>
     <script type="module" src="scripts/transactions.js"></script>
+    <script type="module" src="scripts/transfermoney.js"></script>
 </body>
 
 </html>

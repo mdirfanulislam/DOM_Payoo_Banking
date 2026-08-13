@@ -22,9 +22,12 @@ export function elementId(id) {
 
 const addMoneyForm = elementId('addMoneyForm');
 const selectBank = elementId('selectBank');
-const availableBalance = elementId('availableBalance');
+export const availableBalance = elementId('availableBalance');
 
 availableBalance.innerText = getBalance();
+
+export const tempAccount = 19222222222;
+export const tempPin = 1234;
 
 addMoneyForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -34,14 +37,14 @@ addMoneyForm.addEventListener('submit', (event) => {
     const amount = inputNumber('addAmount');
     const pin = inputNumber('pinNumber');
 
-    const tempAccount = 19222222222;
-    const tempPin = 1234;
-
     if (bank === '') {
         alert('Please select a valid Bank!');
     }
     else if (account !== tempAccount) {
         alert('Please provide a valid Account Number!');
+    }
+    else if (isNaN(amount) || amount < 1) {
+        alert('Please provide a valid Amount!')
     }
     else if (pin !== tempPin) {
         alert('Please provide a valid Pin Number!');
@@ -54,7 +57,6 @@ addMoneyForm.addEventListener('submit', (event) => {
         setBalance(totalBalance);
 
         const typeAddMoney = elementId('addMoneyTransaction').innerText;
-        console.log(typeAddMoney);
         addTransaction(typeAddMoney, amount);
 
         addMoneyForm.reset();

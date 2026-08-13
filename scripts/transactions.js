@@ -1,4 +1,5 @@
-import { getBalance, setBalance, inputNumber, elementId } from "./addmoney.js";
+import { getBalance, setBalance, inputNumber, elementId, availableBalance } from "./addmoney.js";
+
 let allTransactions = JSON.parse(localStorage.getItem('allTransactions')) || [];
 
 function setTransactionToLocalStore() {

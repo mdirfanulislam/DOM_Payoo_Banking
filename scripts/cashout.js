@@ -1,8 +1,7 @@
-import { getBalance, setBalance, inputNumber, elementId } from "./addmoney.js";
+import { getBalance, setBalance, inputNumber, elementId, tempAccount, tempPin, availableBalance } from "./addmoney.js";
 import { addTransaction } from "./transactions.js";
 
 const withMoneyForm = elementId('withMoneyForm');
-const withAmount = elementId('withAmount');
 
 withMoneyForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -10,22 +9,20 @@ withMoneyForm.addEventListener('submit', (e) => {
     const withamount = inputNumber('withAmount');
     const withPin = inputNumber('withPinNum');
 
-    const tempWithAccount = 19222222222;
-    const tempWithPin = 1234;
-
-    if (agentNumber !== tempWithAccount) {
+    if (agentNumber !== tempAccount) {
         alert("Please provide a valid Agent Account Number!");
     }
-    else if (withPin !== tempWithPin) {
+    else if (withPin !== tempPin) {
         alert("Please provide a valid Pin Number!");
     }
     else {
-        const newBalance = getBalance() - withamount;
-        setBalance(newBalance);
+        const newBalanceAfterCashout = getBalance() - withamount;
 
-        elementId('availableBalance').innerText = newBalance;
+        availableBalance.innerText = newBalanceAfterCashout;
 
-        // with amount;
+        setBalance(newBalanceAfterCashout);
+
+        // with type and amount;
         const typeWith = elementId('withTransaction').innerText;
 
         addTransaction(typeWith, withamount);
