@@ -1,5 +1,4 @@
 import { getBalance, setBalance, inputNumber, elementId } from "./addmoney.js";
-
 let allTransactions = JSON.parse(localStorage.getItem('allTransactions')) || [];
 
 function setTransactionToLocalStore() {
@@ -8,11 +7,8 @@ function setTransactionToLocalStore() {
 
 export function addTransaction(type, amount) {
     const icon = (type === 'Add Money' || type === 'Get Bonus') ? "↓" : "↑";
-    const date = new Date().toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-    });
+
+    const date = new Date().toLocaleString("en-US").replace(/\//g, "-");
 
     const transaction = {
         id: Date.now(),
@@ -26,6 +22,7 @@ export function addTransaction(type, amount) {
     setTransactionToLocalStore();
     showAllTransactions();
 }
+
 
 function createItem(item) {
     return document.createElement(item);
@@ -57,7 +54,6 @@ function updateList(transaction) {
     deleteEl.classList.add('p-2', 'text-[#080808]/70', 'hover:text-red-500', 'hover:bg-red-50', 'rounded-lg', 'cursor-pointer');
 
     // set value;
-
     iconEl.innerText = transaction.icon;
 
     typeEl.innerText = transaction.type;
@@ -94,6 +90,7 @@ function showAllTransactions() {
 
 function deleteTransaction(id) {
     allTransactions = allTransactions.filter(t => t.id !== id);
+
     setTransactionToLocalStore();
     showAllTransactions();
 }

@@ -1,18 +1,18 @@
-import { addTransaction } from "./transactions.js";
+import { addTransaction } from './transactions.js';
 
 export function getBalance() {
-    return parseInt(localStorage.getItem("availableBalance")) || 0;
+    return parseInt(localStorage.getItem('availableBalance')) || 0;
 }
 
 export function setBalance(amount) {
-    localStorage.setItem("availableBalance", amount);
+    localStorage.setItem('availableBalance', amount);
 }
 
 export function inputNumber(id) {
     const inputField = elementId(id);
     const inputFieldValue = inputField.value;
     const inputFieldNumber = parseInt(inputFieldValue);
-    // console.log(inputFieldNumber);
+
     return inputFieldNumber;
 }
 
@@ -26,7 +26,7 @@ const availableBalance = elementId('availableBalance');
 
 availableBalance.innerText = getBalance();
 
-addMoneyForm.addEventListener("submit", (event) => {
+addMoneyForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const bank = selectBank.value;
@@ -37,14 +37,14 @@ addMoneyForm.addEventListener("submit", (event) => {
     const tempAccount = 19222222222;
     const tempPin = 1234;
 
-    if (bank === "") {
-        alert("Please select a valid Bank!");
+    if (bank === '') {
+        alert('Please select a valid Bank!');
     }
     else if (account !== tempAccount) {
-        alert("Please provide a valid Account Number!");
+        alert('Please provide a valid Account Number!');
     }
     else if (pin !== tempPin) {
-        alert("Please provide a valid Pin Number!");
+        alert('Please provide a valid Pin Number!');
     }
     else {
         const totalBalance = parseInt(availableBalance.innerText) + amount;
@@ -62,27 +62,26 @@ addMoneyForm.addEventListener("submit", (event) => {
 
 });
 
-///**** Toggle ****///
-document.querySelectorAll(".toggle-btn").forEach(link => {
+///****---- Toggle ----****///
+document.querySelectorAll('.toggle-btn').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
 
-        document.querySelectorAll(".toggle-btn").forEach(active => {
-            active.classList.remove("bg-[#0874F2]/5");
-            active.classList.remove("border-[#0874F2]")
-            active.classList.add("border-[#080808]/10");
+        document.querySelectorAll('.toggle-btn').forEach(active => {
+            active.classList.remove('bg-[#0874F2]/5');
+            active.classList.remove('border-[#0874F2]')
+            active.classList.add('border-[#080808]/10');
         });
 
-        link.classList.remove("border-[#080808]/10");
+        link.classList.remove('border-[#080808]/10');
 
-        link.classList.add("border-[#0874F2]");
-        link.classList.add("bg-[#0874F2]/5");
+        link.classList.add('border-[#0874F2]', 'bg-[#0874F2]/5');
 
         const targetId = link.dataset.target;
         // console.log(link.id)
 
-        document.querySelectorAll(".toggle-panel").forEach(panel => {
-            panel.style.display = panel.id === targetId ? "block" : "none";
+        document.querySelectorAll('.toggle-panel').forEach(panel => {
+            panel.style.display = panel.id === targetId ? 'block' : 'none';
         });
     });
 });

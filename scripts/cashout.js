@@ -27,8 +27,7 @@ withMoneyForm.addEventListener('submit', (e) => {
 
         // with amount;
         const typeWith = elementId('withTransaction').innerText;
-        // console.log(typeWith);
-        // console.log(withamount);
+
         addTransaction(typeWith, withamount);
 
         withMoneyForm.reset();

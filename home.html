@@ -5,19 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tailwind CSS cdn! -->
+    <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
+
+    <!---- Tailwind CSS cdn! ---->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <!-- Daisy UI cdn! -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 
-    <!-- Google Font! -->
+    <!---- Google Font! ---->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <title>Payoo Home</title>
+    <title>P a y o o</title>
 </head>
 
 <body class="bg-[#F4F5F7] h-full pb-10">
@@ -43,7 +46,7 @@
             </div>
         </nav>
 
-        <!-- Welcome! -->
+        <!---- Welcome! ---->
         <section class="items-center h-27 py-3 px-6 mx-auto max-w-lg mt-2">
             <h1 class="text-[24px] font-bold">Welcome to Pay<span class="text-[#7460FF]">oo</span></h1>
             <p class="text-[#080808] opacity-50">Enjoy easy and convenient financial services with us.
@@ -51,7 +54,7 @@
                 low and </p>
         </section>
 
-        <!-- Services! -->
+        <!---- Services! ---->
         <section id="services"
             class="grid grid-cols-3 gap-4 place-content-center justify-items-center py-3 px-6 mx-auto max-w-lg mt-3">
 
@@ -95,7 +98,7 @@
 
     <!----------------------------------------->
     <!----------------------------------------->
-    <!-- Transaction History -->
+    <!---- Transaction History ---->
     <div id="transactions" class="toggle-panel max-w-lg mx-auto px-5 my-5 h-screen">
 
         <div class="my-4 flex justify-between items-center">
@@ -104,33 +107,13 @@
         </div>
 
         <ul class="mx-auto mx-w-lg" id="transactionList">
-            <!-- Transaction Item -->
-            <li class="flex items-center gap-4 px-4 py-3 bg-white rounded-xl">
-                <div
-                    class="flex items-center justify-center w-10 h-10 rounded-full bg-[#0874F2]/20 text-[#0874F2] text-2xl">
-                    ↓↑
-                </div>
-
-                <div class="flex-1">
-                    <div class="text-sm font-semibold text-[#080808]/70">Add Money</div>
-                    <div class="text-[12px] text-[#080808]/70 mt-1">Aug 12, 2026</div>
-                </div>
-
-                <div class="font-bold text-green-600">
-                    $140
-                </div>
-
-                <button class="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer">
-                    <i class="fa-solid fa-trash-can"></i>
-                </button>
-            </li>
+            <!---- Transaction Item li dynamically ---->
         </ul>
-
 
     </div>
 
     <!----------------------------------------->
-    <!-- Add Money! -->
+    <!---- Add Money! ---->
     <div id="addMoney" class="hidden toggle-panel max-w-lg mx-auto px-5">
 
         <h1 id="addMoneyTransaction" class="text-[18px] font-semibold opacity-90 my-4">Add Money</h1>
@@ -177,7 +160,7 @@
     </div>
 
     <!----------------------------------------->
-    <!-- CashOut! -->
+    <!---- CashOut! ---->
     <div id="withMoney" class="hidden toggle-panel max-w-lg mx-auto px-5">
 
         <h1 id="withTransaction" class="text-[18px] font-semibold opacity-90 my-4">Cash Out</h1>
@@ -211,7 +194,7 @@
     </div>
 
     <!----------------------------------------->
-    <!-- Script! -->
+    <!---- Script! ---->
     <script type="module" src="scripts/addmoney.js"></script>
     <script type="module" src="scripts/cashout.js"></script>
     <script type="module" src="scripts/transactions.js"></script>
