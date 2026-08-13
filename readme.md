@@ -1,4 +1,4 @@
-<img src="./assets/Logo-full.png" width="200"  style="background:white;padding:10px;"/>
+<img src="/Assets/Logo-full.png" width="200"  style="background:white;padding:10px;"/>
 
 # PAYOO - Smart MFS Interface 
 
