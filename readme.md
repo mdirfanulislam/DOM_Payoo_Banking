@@ -72,7 +72,3 @@ Copy the project assets and set up required CDNs:
 
 
 - **Font Awesome** - Add Font Awesome icons:
-
-
-### 3. Start Building the Application
-
