@@ -1,3 +1,8 @@
+# P a y o o
+
+# GitHub Repo Link: [https://github.com/mdirfanulislam/DOM_Payoo_Banking]
+# Live Link: [https://dom-payoo-banking.vercel.app/]
+
 <img src="/Assets/Logo-full.png" width="200"  style="background:white;padding:10px;"/>
 
 # PAYOO - Smart MFS Interface 
@@ -23,7 +28,7 @@ PAYOO is a smart Mobile Financial Services (MFS) interface that provides a seaml
         <img src="./ui/Login page.png" >
         </td>
         <td >
-        <img src="./assets/Logo-full.png" width="100%" style="background:white;padding:10px;">
+        <img src="/Assets/Logo-full.png" width="100%" style="background:white;padding:10px;">
         </td>
     </tr>
     <tr>
