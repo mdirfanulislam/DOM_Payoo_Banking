@@ -87,3 +87,20 @@ document.querySelectorAll('.toggle-btn').forEach(link => {
         });
     });
 });
+
+
+
+///****---- Log Out ----****///
+const authBtn = document.getElementById('auth-btn');
+
+authBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (authBtn.classList.contains('logged-in')) {
+        authBtn.classList.remove('logged-in');
+        window.location.href = 'index.html';
+    } else {
+        authBtn.classList.add('logged-in');
+        authBtn.innerText = 'Log In';
+    }
+});

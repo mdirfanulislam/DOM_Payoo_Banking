@@ -1,8 +1,8 @@
 // Login button functionality;
-document.getElementById("loginBtn").addEventListener("click", (event) => {
+document.getElementById("formFieldset").addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const mobile = 1922222222;
+    const mobile = 19222222222;
     const pin = 1234;
 
     const mobileNum = document.getElementById("mobileNumber").value;
